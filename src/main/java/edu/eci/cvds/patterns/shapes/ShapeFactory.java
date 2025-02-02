@@ -20,7 +20,7 @@ public class ShapeFactory {
             case Hexagon:
                 Hexagon hexagon = new Hexagon();
                 return hexagon;
-                
+
             default:
                 return null;
         }
