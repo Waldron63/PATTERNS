@@ -69,18 +69,25 @@ una y otra vez y nos permite trabajar en el proyecto sin conexión a internet
 ## CREAR UN PROYECTO CON MAVEN
 Para crear un proyecto en maiven primero nos pararemos en la
 carpeta en la cual lo vamos a crear con cd "ruta"
-Luego vamos a creaamos el proyecto con el siguiente comando
-![](images/1.png)
+Luego vamos a creaamos el proyecto con el siguiente comando  
+![](images/1.png)  
+```
+mvn archetype:generate -DgroupId=edu.eci.cvds -DartifactId=Patterns -DarchetypeArtifactId=manen-archetype-quickstart -DarchetypeVersion=1.0 -DinteractiveMode=false
+```
+
 Por lo que una carpeta "Patterns" sera creada, luego vamos a posicionarnos
 sobre la carpeta.
 Esta es la estructura de archivos en la carpeta, utilizando
-"tree /f"
+"tree /f"  
 ![](images/2.png)
 
 ## AJUSTAR ALGUNAS CONFIGURACIONES EN EL PROYECTO
 ![](images/3.png)
 ## Compilar y ejecutar
-Por medio del comando "mvn package", compilamos el xml
+Por medio del comando "mvn package", compilamos el xml  
+```
+mvn package
+```
 ![](images/4.png)
 package: al utilizar este comando pasamos a las fases de maven
 compilacion,prueba y paquete creando la caperta target
@@ -106,8 +113,10 @@ mvn site: genera un sitio web estatico para el proyecto
 (javaDoc)
 
 ### Ejecutar un proyecto maven 
-Por medio del comando "mvn exec:java -Dexec.mainClass="ruta_main" -Dexec.args="argumento"
-
+Por medio del comando:
+```
+mvn exec:java -Dexec.mainClass="ruta_main" -Dexec.args="argumento"
+```
 ### Saludo personalizado
 ![](images/5.jpeg)
 ![](images/6.jpeg)
@@ -125,6 +134,11 @@ manera implementando el patrón de fábrica
 ![](images/8.PNG)
 
 ### ¿Cuál fábrica hiciste? y ¿Cuál es mejor?
+Generamos el patron de fabrica "Simple Factory", donde colocamos una interfaz "Shape", que ayuda a crear los objetos en 
+la clase ShapeMain, con la clase "enum".  
+
+Consideramos que el mejor patron sigue siendo el Simple Factory para este laboratorio, ya que es una solucion facil y no
+tan costosa de generar el resultado esperado.
 
 ### ejecucion de shapeMain
 * Sin parámetros
@@ -138,6 +152,10 @@ manera implementando el patrón de fábrica
 
 * Parámetro: Hexagon
 ![](images/13.png)
+* ¿Cual(es) de las anteriores instrucciones se ejecutan y funcionan correctamente y por qué?  
+la primera ejecucion no funciona al mandar los parametros vacios, este retorna el condicional de "parametro vacio"  
+la ejecucion "qwerty" no esta en el listado enum de "RegularShapeType" por lo que lanza la excepcion  
+Y las 2 ultimas ejecuciones funcionan correctamente al estar en el listado enum de "RegularShapeType"
 
 
 
